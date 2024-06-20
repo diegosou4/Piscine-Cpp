@@ -33,4 +33,5 @@ void PersonInfo::setValues()
     this->_nickname = givemecontent("Nick Name");
     this->_number = givemecontent("Number");
     this->_number = givemecontent("Darkset");
+    std::cout << "Thanks for use Phonebook!!" << std::endl;
 }
