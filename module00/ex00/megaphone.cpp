@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 11:35:59 by diegmore          #+#    #+#             */
-/*   Updated: 2024/06/20 11:36:00 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/06/20 11:42:37 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,29 @@ void to_Uppercase(char *string)
         std::cout << result;    
     }
 }
+void print_all(int ac,char **av)
+{
+    for(int rest = 1;rest != ac;rest++)
+    {
+        if(rest != ac && rest != 1)
+            std::cout << " ";
+        to_Uppercase(av[rest]);
+    }
+}
 
+int print_empty(void)
+{
+    std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+    return(0);
+}
 
 int main(int ac,char **av)
 {
-    int i;
-    i = 1;
-
     if(ac == 1)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return(0);
-    }else{
-        for(int rest = 1;rest != ac;rest++)
-        {
-              if(rest != ac && rest != 1)
-                std::cout << " ";
-            to_Uppercase(av[rest]);
-        }
-    }
+        return(print_empty());   
+    else
+      print_all(ac,av);
     std::cout <<  std::endl;
-
     return(0);
 }
 
