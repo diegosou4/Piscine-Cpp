@@ -28,5 +28,9 @@ void PersonInfo::getName()
 }
 void PersonInfo::setValues()
 { 
-    this->_firstname = givemecontent("Name");
+    this->_firstname = givemecontent("First Name");
+    this->_lastname = givemecontent("Last Name");
+    this->_nickname = givemecontent("Nick Name");
+    this->_number = givemecontent("Number");
+    this->_number = givemecontent("Darkset");
 }
