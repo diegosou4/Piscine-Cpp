@@ -3,11 +3,12 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip> 
 
 class PersonInfo
 {
 private:
-    int id;
+    int _id;
     std::string _firstname;
     std::string _lastname;
     std::string _nickname;
@@ -18,7 +19,9 @@ public:
     PersonInfo();
     ~PersonInfo();
     void setValues();
-    void getName();
+    std::string getName();
+    void getColumn();
+    void setId(int id);
 };
 
 
