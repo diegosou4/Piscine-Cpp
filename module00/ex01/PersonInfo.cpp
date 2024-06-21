@@ -28,6 +28,7 @@ void PersonInfo::getName()
 }
 void PersonInfo::setValues()
 { 
+    std::cin.clear();
     this->_firstname = givemecontent("First Name");
     this->_lastname = givemecontent("Last Name");
     this->_nickname = givemecontent("Nick Name");

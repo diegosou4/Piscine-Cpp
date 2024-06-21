@@ -7,6 +7,7 @@
 class PersonInfo
 {
 private:
+    int id;
     std::string _firstname;
     std::string _lastname;
     std::string _nickname;
