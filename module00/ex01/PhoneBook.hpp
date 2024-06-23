@@ -20,12 +20,15 @@ class Phonebook{
 
 void Phonebook::printTable()
 {
-    std::cout << "index | first name | last name | nickname " << std::endl;
+    std::cout << std::right << std::setw(10) << "index" << "|";
+    std::cout << std::right << std::setw(10) << "first name" << "|";
+    std::cout << std::right << std::setw(10) << "last name" << "|";
+    std::cout << std::right << std::setw(10) << "nickname" << "|" << std::endl;
     for(int i = 0;i < 8;i++)
     {
         if(!person[i].getName().empty())
         {
-             person[i].getColumn();
+             person[i].getColumn(i);
         }
             
     }

@@ -15,12 +15,24 @@ void PersonInfo::setId(int id)
 {
     this->_id = id;
 }
-
-void PersonInfo::getColumn()
+std::string formatfield(std::string field)
 {
-    std::cout << this->_firstname << "|" << std::setw(10);
-    std::cout << this->_lastname  << "|" << std::setw(10);
-    std::cout << this->_nickname  << "|" << std::setw(10);
+    std::string fieldcorrect;
+    if(field.size() > 10)
+    {
+        fieldcorrect = field.substr(0,9) + ".";
+        return(fieldcorrect);
+    }
+    return(field);
+    
+}
+
+void PersonInfo::getColumn( int index)
+{
+    std::cout << std::right << std::setw(10) << index << "|";
+    std::cout << std::right << std::setw(10) << formatfield(_firstname) << "|";
+    std::cout << std::right << std::setw(10) << formatfield(_lastname)  << "|";
+    std::cout << std::right << std::setw(10) << formatfield(_nickname) << "|";
     std::cout << std::endl;
 }
 

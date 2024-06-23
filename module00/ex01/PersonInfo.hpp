@@ -20,7 +20,7 @@ public:
     ~PersonInfo();
     void setValues();
     std::string getName();
-    void getColumn();
+    void getColumn(int index);
     void setId(int id);
 };
 
