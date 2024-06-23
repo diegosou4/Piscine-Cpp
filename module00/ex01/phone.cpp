@@ -11,39 +11,37 @@ void printmenu()
     std::cout << "[3] - EXIT" << std::endl;
 }
 
+int dooption(int option,int index,Phonebook *phone)
+{
+    if(option == 1)
+    {
+        phone->addContact();
+        return(1);
+    }
+    else if(option == 2)
+    {
+        phone->printTable();
+        return(0);
+    }
+    return(0);
+}
 
 int main(int ac,char **av)
 {
     Phonebook* phone;
+    int index = 0;
     int option = 0;
-    int i = 0;
-    phone = new Phonebook;
+
+    phone = new Phonebook(7);
     std::cout << "Welcome to Phone Book" << std::endl;
+    
     while(option != 3)
     {
-         printmenu();
-         std::cin >> option;
-         switch (option)
-         {
-             std::cout << "\033[2J\033[1;1H";
-         case 1:
-         {
-            phone->person[i].setValues();
-            i++;
-            break;
-         }
-        case 2:
-        {
-            phone->printTable();
-            break;
-        }
-         default:
-            break;
-         }
-       
+        printmenu();
+        std::cin >> option;
+        index += dooption(option,index,phone);
     }
-    std::cout << "Se you Next time!" << std::endl;
-    delete phone;
+
     return(0);
     
 
