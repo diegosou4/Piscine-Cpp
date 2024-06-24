@@ -42,7 +42,7 @@ std::string givemecontent(std::string field)
     while(content.empty())
     {
         std::cout << "Phonebook--->" + field + ":";
-        std::cin >> content;
+        std::getline(std::cin,content);
     }
     return(content);
 }
@@ -53,7 +53,7 @@ std::string PersonInfo::getName()
 
 void PersonInfo::setValues()
 { 
-    std::cout << "\033[2J\033[1;1H";
+   std::cout << "\033[2J\033[1;1H";
     std::cin.clear();
     this->_firstname = givemecontent("First Name");
     this->_lastname = givemecontent("Last Name");

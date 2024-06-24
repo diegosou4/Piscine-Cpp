@@ -12,11 +12,13 @@
 class Phonebook{
     private:
     int _index;
+    bool _isfull;
     public:
     Phonebook(){};
     ~Phonebook(){};
     Phonebook(int index){
         this->_index  = index;
+        this->_isfull = false;
     };
     PersonInfo person[8];
     void getindex();
@@ -27,15 +29,19 @@ class Phonebook{
 
 void Phonebook::addContact()
 {
-    std::cout << "passa aqui";
-    std::cout << _index << std::endl;
     if(_index >= 0)
     {
+        if(_isfull == true)
+            std::cout << "Agenda cheia vamos apagar seu contato mais antigo" << std::endl;
         person[_index].setValues();
         _index -= 1;
     }
     if(_index < 0)
+    {
+        _isfull = true;
         _index = 7;
+    }
+        
 
 
 }
@@ -50,7 +56,7 @@ void Phonebook::printTable()
     std::cout << std::right << std::setw(10) << "first name" << "|";
     std::cout << std::right << std::setw(10) << "last name" << "|";
     std::cout << std::right << std::setw(10) << "nickname" << "|" << std::endl;
-    for(int i = 0;i < 8;i++)
+    for(int i = 7;i >= 0;i--)
     {
         if(!person[i].getName().empty())
         {
