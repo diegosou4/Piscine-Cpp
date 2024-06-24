@@ -41,9 +41,6 @@ void Phonebook::addContact()
         _isfull = true;
         _index = 7;
     }
-        
-
-
 }
 void Phonebook::getindex()
 {

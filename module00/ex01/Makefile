@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: diegmore <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 11:08:40 by diegmore          #+#    #+#              #
-#    Updated: 2024/06/21 11:08:44 by diegmore         ###   ########.fr        #
+#    Updated: 2024/06/24 10:17:24 by diegmore         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = phonebook
 
 CC = c++
-CFLAGS = -std=c++98 #-Wall -Wextra -Werror
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRC = PersonInfo.cpp
 OBJ = $(SRC:.cpp=.o)

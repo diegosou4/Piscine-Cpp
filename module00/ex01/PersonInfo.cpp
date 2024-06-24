@@ -3,7 +3,6 @@
 
 PersonInfo::PersonInfo()
 {
-    
 }
 
 PersonInfo::~PersonInfo()

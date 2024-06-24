@@ -31,7 +31,7 @@ void dooption(int option,Phonebook *phone)
     }
 }
 
-int main(int ac,char **av)
+int main(void)
 {
     Phonebook* phone;
     int option = 0;
@@ -47,5 +47,4 @@ int main(int ac,char **av)
     }
     delete phone;
     return(0);
-    
 }
