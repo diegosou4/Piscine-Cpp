@@ -11,25 +11,29 @@ void printmenu()
     std::cout << "[3] - EXIT" << std::endl;
 }
 
-int dooption(int option,int index,Phonebook *phone)
+void dooption(int option,Phonebook *phone)
 {
-    if(option == 1)
+    switch (option)
     {
+    case 1:
         phone->addContact();
-        return(1);
-    }
-    else if(option == 2)
-    {
+    break;
+    case 2:
         phone->printTable();
-        return(0);
+    break;
+    case 3:
+        std::cout << "Thanks for use Phone Book! Good bye ;)" << std::endl;
+    break;
+    default:
+        std::cout << "\033[2J\033[1;1H";
+        std::cout << "Wrong option please choose a correct option" << std::endl;
+        break;
     }
-    return(0);
 }
 
 int main(int ac,char **av)
 {
     Phonebook* phone;
-    int index = 0;
     int option = 0;
 
     phone = new Phonebook(7);
@@ -39,11 +43,9 @@ int main(int ac,char **av)
     {
         printmenu();
         std::cin >> option;
-        index += dooption(option,index,phone);
+        dooption(option,phone);
     }
-
+    delete phone;
     return(0);
     
-
-
 }
