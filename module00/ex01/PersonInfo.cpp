@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PersonInfo.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/27 14:34:46 by diegmore          #+#    #+#             */
+/*   Updated: 2024/06/27 14:34:47 by diegmore         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "PersonInfo.hpp"
 
@@ -38,11 +50,12 @@ std::string givemecontent(std::string field)
 {
     std::string content;
 
+ 
+    std::cout << "Phonebook--->" + field + ":";
     while(content.empty())
     {
-        std::cout << "Phonebook--->" + field + ":";
         std::getline(std::cin,content);
-    }
+    }   
     return(content);
 }
 std::string PersonInfo::getName()
@@ -52,8 +65,7 @@ std::string PersonInfo::getName()
 
 void PersonInfo::setValues()
 { 
-   std::cout << "\033[2J\033[1;1H";
-    std::cin.clear();
+    std::cout << "\033[2J\033[1;1H";
     this->_firstname = givemecontent("First Name");
     this->_lastname = givemecontent("Last Name");
     this->_nickname = givemecontent("Nick Name");

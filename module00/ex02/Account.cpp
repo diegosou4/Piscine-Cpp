@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/27 14:36:17 by diegmore          #+#    #+#             */
+/*   Updated: 2024/06/27 14:36:18 by diegmore         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
 #include <ctime>
@@ -64,7 +76,7 @@ void Account::makeDeposit(int deposit)
     _amount += deposit;
     _nbDeposits++;
     std::cout << "amount:" << checkAmount() << ";";
-    std::cout << "nb_deposits:" << _nbDeposits << ";" << std::endl;
+    std::cout << "nb_deposits:" << _nbDeposits << std::endl;
     _totalAmount += deposit;
     _totalNbDeposits++;
 }
