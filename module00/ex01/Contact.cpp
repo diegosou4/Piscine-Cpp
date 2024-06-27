@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <string>
 
 Contact::Contact()
 {
@@ -28,12 +29,14 @@ void Contact::setId(int id)
 std::string formatfield(std::string field)
 {
     std::string fieldcorrect;
+
     if(field.size() > 10)
     {
         fieldcorrect = field.substr(0,9) + ".";
         return(fieldcorrect);
     }
-    return(field);
+  
+    return(fieldcorrect);
 }
 
 void Contact::getColumn( int index)
@@ -54,7 +57,7 @@ std::string givemecontent(std::string field)
     while(content.empty())
     {
         std::getline(std::cin,content);
-    }   
+    }  
     return(content);
 }
 std::string Contact::getName()
