@@ -11,15 +11,14 @@
 /* ************************************************************************** */
 
 #include <iostream>
-
+#include <cctype>
 
 void to_Uppercase(char *string)
 {
     for(int i = 0; string[i] != '\0';i++)
     {   
         char result = string[i];
-        if(string[i] >= 97 && string[i] <= 122)
-            result -= 32;
+        result = toupper(result);
         std::cout << result;    
     }
 }

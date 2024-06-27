@@ -16,7 +16,7 @@ NAME = phonebook
 CC = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = PersonInfo.cpp
+SRC = Contact.cpp Phonebook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
