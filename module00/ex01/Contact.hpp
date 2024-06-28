@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:13:48 by diegmore          #+#    #+#             */
-/*   Updated: 2024/06/27 16:13:49 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/06/28 12:11:25 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
     std::string getName();
     void getColumn(int index);
     void setId(int id);
+    void getFullColumn(int index);
 };
 
 

@@ -33,6 +33,7 @@ void Phonebook::getindex()
 }
 void Phonebook::printTable()
 {
+    std::string option;
     std::cout << "\033[2J\033[1;1H";
     std::cout << std::right << std::setw(10) << "index" << "|";
     std::cout << std::right << std::setw(10) << "first name" << "|";
@@ -43,6 +44,23 @@ void Phonebook::printTable()
         if(!_person[i].getName().empty())
         {
              _person[i].getColumn(i);
+        }
+    }
+    std::cout << "Informe o id do contato que voce quer ver" << std::endl;
+    getline(std::cin,option);
+    if (std::cin.eof() && option.size() != 1)
+    {
+        std::cout << "Error" << std::endl;
+        return;
+    }  
+    int index = option[0];
+    if(index >= 0 && index <= 7)
+    {
+        if(_person[index].getName().empty())
+        {
+            _person[index].getFullColumn(index);
+        }else{
+            std::cout << "Id nao encontrado" << std::endl;
         }
     }
 }

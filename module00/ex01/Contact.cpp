@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:12:47 by diegmore          #+#    #+#             */
-/*   Updated: 2024/06/27 16:13:24 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/06/28 12:12:15 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,18 @@ void Contact::getColumn( int index)
     std::cout << std::right << std::setw(10) << formatfield(_nickname) << "|";
     std::cout << std::endl;
 }
+
+void Contact::getFullColumn(int index)
+{
+    std::cout << std::right << std::setw(10) << (7 - index) << "|";
+    std::cout << std::right << std::setw(10) << formatfield(_firstname) << "|";
+    std::cout << std::right << std::setw(10) << formatfield(_lastname)  << "|";
+    std::cout << std::right << std::setw(10) << formatfield(_nickname) << "|";
+    std::cout << std::right << std::setw(10) << formatfield(_number) << "|";
+    std::cout << std::right << std::setw(10) << formatfield(_darkset) << "|";
+    std::cout << std::endl;
+}
+
 
 std::string givemecontent(std::string field)
 {
