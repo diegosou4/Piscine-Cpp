@@ -15,9 +15,7 @@ void Phonebook::addContact()
 {
     if(_index >= 0)
     {
-        if(_isfull == true)
-            std::cout << "Agenda cheia vamos apagar seu contato mais antigo" << std::endl;
-        _person[_index].setValues();
+        _person[_index].setValues(_isfull);
         _index -= 1;
     }
     if(_index < 0)
@@ -45,7 +43,7 @@ void Phonebook::printFcontact()
     std::string option;
     
     getTable();
-    std::cout << "Informe o id do contato que voce quer ver" << std::endl;
+    std::cout << "Enter the ID you are looking for:" << std::endl;
     getline(std::cin,option);
     if (std::cin.eof() && option.size() != 1)
     {
@@ -62,10 +60,10 @@ void Phonebook::printFcontact()
               _person[index].getFullColumn(index);
         }
         else
-            std::cout << "Id nao encontrado" << std::endl;
+            std::cout << "Id not found" << std::endl;
         return;
     }
-    std::cout << "Id nao encontrado" << std::endl;
+    std::cout << "Id not found" << std::endl;
 }
 
 void Phonebook::getTable()
