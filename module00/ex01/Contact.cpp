@@ -6,7 +6,7 @@
 /*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:12:47 by diegmore          #+#    #+#             */
-/*   Updated: 2024/07/02 10:54:39 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:28:52 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,13 @@ void Contact::getColumn( int index)
 
 void Contact::getFullColumn(int index)
 {
-    std::cout << std::right << std::setw(10) << (7 - index) << "|";
-    std::cout << std::right << std::setw(10) << formatfield(_firstname) << "|";
-    std::cout << std::right << std::setw(10) << formatfield(_lastname)  << "|";
-    std::cout << std::right << std::setw(10) << formatfield(_nickname) << "|";
-    std::cout << std::right << std::setw(10) << formatfield(_number) << "|";
-    std::cout << std::right << std::setw(10) << formatfield(_darkset) << "|";
+    std::cout << "\033[2J\033[1;1H";
+    std::cout << "Index: " <<  (7 - index) << std::endl;
+    std::cout << "First Name: " << _firstname << std::endl;
+    std::cout << "Last Name: " << _lastname << std::endl;
+    std::cout << "Nickname: " << _nickname << std::endl;
+    std::cout << "Number: "  << _number << std::endl;
+    std::cout << "Darkset :" << _darkset << std::endl;
     std::cout << std::endl;
 }
 
@@ -68,6 +69,11 @@ std::string givemecontent(std::string field)
     while(content.empty())
     {
         std::getline(std::cin,content);
+    }
+    for (size_t pos = content.find('\t'); pos != std::string::npos; pos = content.find('\t', pos))
+    {
+    content.replace(pos, 1, " ");
+    pos += 1;
     }  
     return(content);
 }

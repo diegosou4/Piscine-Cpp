@@ -28,16 +28,6 @@ void Phonebook::getindex()
 {
     std::cout << _index << std::endl;
 }
-static void getfulltable()
-{   
-    std::cout << "\033[2J\033[1;1H";
-    std::cout << std::right << std::setw(10) << "index" << "|";
-    std::cout << std::right << std::setw(10) << "first name" << "|";
-    std::cout << std::right << std::setw(10) << "last name" << "|";
-    std::cout << std::right << std::setw(10) << "nickname" << "|";
-    std::cout << std::right << std::setw(10) << "Number" << "|";
-    std::cout << std::right << std::setw(10) << "Darkset" << "|" << std::endl;
-}
 void Phonebook::printFcontact()
 {
     std::string option;
@@ -56,7 +46,6 @@ void Phonebook::printFcontact()
         index = 7 - index;
         if(!_person[index].getName().empty())
         {
-             getfulltable();
               _person[index].getFullColumn(index);
         }
         else
