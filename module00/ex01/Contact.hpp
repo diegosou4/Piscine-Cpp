@@ -6,12 +6,12 @@
 /*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:13:48 by diegmore          #+#    #+#             */
-/*   Updated: 2024/07/02 10:49:38 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/07/02 11:51:20 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Contact_HPP
-#define Contact_HPP
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <string>
 #include <iostream>
