@@ -1,3 +1,10 @@
+
+RED = \033[0;31m
+GREEN = \033[0;32m
+YELLOW = \033[1;33m
+BBLUE = \033[1;34m
+NC = \033[0m
+
 NAME = account
 
 CC = c++
@@ -9,16 +16,20 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "$(BBLUE)Creating Account Progam...$(NC)"
+	@echo "$(BBLUE)Thank GlobalBanksters United for the opportunity!! $(NC)"
+	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@echo "$(RED)Removing object files..$(NC)"
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "$(RED)Removing Account..$(NC)"
+	@rm -f $(NAME)
 
 re: fclean all
 
