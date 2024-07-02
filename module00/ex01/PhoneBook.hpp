@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:35:42 by diegmore          #+#    #+#             */
-/*   Updated: 2024/06/27 14:35:45 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:58:30 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <string>
+#include <cctype>
+
 
 class Phonebook{
     private:
@@ -27,8 +29,9 @@ class Phonebook{
     ~Phonebook();
     Phonebook(int index);
     void getindex();
-    void printTable();
+    void printFcontact();
     void addContact();
+    void getTable();
 };
 
 

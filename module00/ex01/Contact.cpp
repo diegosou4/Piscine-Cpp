@@ -6,7 +6,7 @@
 /*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 16:12:47 by diegmore          #+#    #+#             */
-/*   Updated: 2024/06/28 12:12:15 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:52:34 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,13 @@ void Contact::setId(int id)
 std::string formatfield(std::string field)
 {
     std::string fieldcorrect;
-
+    
     if(field.size() > 10)
     {
         fieldcorrect = field.substr(0,9) + ".";
         return(fieldcorrect);
     }
-  
-    return(fieldcorrect);
+    return(field);
 }
 
 void Contact::getColumn( int index)
@@ -84,7 +83,7 @@ void Contact::setValues()
     this->_lastname = givemecontent("Last Name");
     this->_nickname = givemecontent("Nick Name");
     this->_number = givemecontent("Number");
-    this->_number = givemecontent("Darkset");
+    this->_darkset = givemecontent("Darkset");
     std::cout << "\033[2J\033[1;1H";
     std::cout << "Thanks for use Phonebook!!" << std::endl;
 }

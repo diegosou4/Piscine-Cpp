@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phone.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: diegmore <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:35:24 by diegmore          #+#    #+#             */
-/*   Updated: 2024/06/27 14:35:25 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:51:00 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void dooption(std::string input,Phonebook *phone)
     if (input == "ADD" || input ==  "1")
         phone->addContact();
     else if (input == "SEARCH" || input ==  "2") 
-        phone->printTable();        
+        phone->printFcontact();        
     else if (input == "EXIT" || input == "3") 
     std::cout << "Thanks for using Phone Book! Good bye ;)" << std::endl;
     else 
