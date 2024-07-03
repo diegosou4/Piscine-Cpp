@@ -1,0 +1,9 @@
+teste
+
+
+mundo ola mundo
+
+vendo se consigo imprimir todas as linhas da string
+
+
+sera que consigo fazer isso?
