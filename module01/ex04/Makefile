@@ -7,7 +7,7 @@ NC = \033[0m
 
 NAME = srp
 CC = c++
-CFLAGS = -std=c++98  #-Wall -Wextra -Werror
+CFLAGS = -std=c++98  -Wall -Wextra -Werror
 
 SRC = main.cpp Filehelp.cpp
 
