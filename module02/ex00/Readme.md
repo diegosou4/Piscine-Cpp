@@ -1,0 +1,15 @@
+Class Desing
+
+ORTHODOX CANINICAL FORM
+
+
+- DEFAULT CONSTRUCTOR 
+
+- COPY CONSTRUCTOR
+SO WHEN I CALL THE COPY CONSTRUCTOR 
+HE CALL THE COPY ASSIGMENT OPERATOR TOO
+in *this = copy
+so whats happen?
+call the
+- COPY ASSIGNMENT OPERATOR
+and in copy will copy the values
