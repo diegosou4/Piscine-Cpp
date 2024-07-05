@@ -16,7 +16,7 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BBB)Creating Harl 2.0$(NC)"
+	@echo "$(BBLUE)Creating Harl 2.0$(NC)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp

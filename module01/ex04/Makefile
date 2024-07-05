@@ -16,7 +16,7 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BBB)Creating Search and Replace progam...$(NC)"
+	@echo "$(BBLUE)Creating Search and Replace progam...$(NC)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
