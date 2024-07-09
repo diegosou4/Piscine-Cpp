@@ -27,7 +27,7 @@ clean:
 	@echo "$(RED)Removing object files..$(NC)"
 	@rm -rf $(OBJ)
 
-fclean: 
+fclean: clean
 	@echo "$(RED)Removing Progam..$(NC)"
 	@rm -rf $(NAME)
 
