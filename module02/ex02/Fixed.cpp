@@ -91,24 +91,36 @@ bool Fixed::operator!=(const Fixed& other) const
     return(this->toInt() != other.toInt()) ? true : false;
 }
 
-int Fixed::operator+(const Fixed& other) const
+Fixed Fixed::operator+(const Fixed& other) const
 {
-    return(this->toInt() + other.toInt());
+    Fixed temp(*this);
+
+    temp._pfixed += other._pfixed;
+    return(temp);
 }
 
-int Fixed::operator-(const Fixed& other) const
+Fixed Fixed::operator-(const Fixed& other) const
 {
-    return(this->toInt() - other.toInt());
+    Fixed temp(*this);
+    
+    temp._pfixed = roundf((this->toFloat() - other.toFloat()) * (1 << _fbits)) ;
+    return(temp);
 }
 
-int Fixed::operator*(const Fixed& other) const
+Fixed Fixed::operator*(const Fixed& other) const
 {
-    return(this->toInt() * other.toInt());
+    Fixed temp(*this);
+ 
+    temp._pfixed = roundf((this->toFloat() * other.toFloat()) * (1 << _fbits)) ;
+    return(temp);
 }
 
-int Fixed::operator/(const Fixed& other) const
+Fixed Fixed::operator/(const Fixed& other) const
 {
-    return(this->toInt() / other.toInt());
+    Fixed temp(*this);
+ 
+    temp._pfixed = roundf((this->toFloat() / other.toFloat()) * (1 << _fbits)) ;
+    return(temp);
 }
 
 Fixed Fixed::operator++(int)
@@ -136,6 +148,22 @@ Fixed& Fixed::operator--() {
     return *this;
 }
 
+
+const Fixed& Fixed::min(const Fixed& first, const Fixed& second) {
+    return (first.toFloat() < second.toFloat()) ? first : second;
+}
+
+const Fixed& Fixed::max(const Fixed& first, const Fixed& second) {
+    return (first.toFloat() > second.toFloat()) ? first : second;
+}
+
+Fixed& Fixed::min(Fixed& first, Fixed& second) {
+    return (first.toFloat() < second.toFloat()) ? first : second;
+}
+
+Fixed& Fixed::max(Fixed& first,  Fixed& second) {
+    return (first.toFloat() > second.toFloat()) ? first : second;
+}
 
 std::ostream& operator<<(std::ostream& os, const Fixed& fixed) {
     os << fixed.toFloat();
