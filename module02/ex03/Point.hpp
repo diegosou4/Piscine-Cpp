@@ -11,8 +11,11 @@ class Point
     public:
     Point();
     ~Point();
-
-
+    Point(const float x, const float y);
+    Point(const Point& copy);
+    Point& operator=(const Point& src);
+    float get_x() const;
+    float get_y() const;
 };
 
 
