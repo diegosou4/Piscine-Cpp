@@ -4,8 +4,9 @@
 
 ClapTrap::~ClapTrap()
 {
+    std::cout << "ClapTrap Destructor called" << std::endl;
 }
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     std::cout << "Default Constructor Called !" << std::endl;
 }
@@ -18,11 +19,13 @@ ClapTrap::ClapTrap(std::string name) : _hitPoints(10), _energyPoints(10), _attac
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
 {
+     std::cout << "ClapTrap copy constructor called" << std::endl;
     *this = obj;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &obj)
 {
+     std::cout << "ClapTrap assignment operator called" << std::endl;
     if(this != &obj)
     {
         _name = obj._name;
