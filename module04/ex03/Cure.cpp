@@ -22,3 +22,12 @@ Cure::Cure(const Cure &copy)
 {
     *this = copy;
 }
+
+Cure &Cure::operator=(const Cure &copy)
+{
+    std::cout << "Cure assignment operator called" << std::endl;
+    if(this != &copy)
+        _type = copy._type;
+    
+    return(*this);
+}
