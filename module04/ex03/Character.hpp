@@ -12,6 +12,11 @@ class Character : public ICharacter
     std::string _name;
     AMateria *_materia[4];
     public:
+    Character();
+    Character(const Character &copy);
+    Character &operator=(const Character &copy);
+    Character(std::string name);
+    ~Character();
     std::string const & getName() const;
     void equip(AMateria * m);
     void unequip(int idx);

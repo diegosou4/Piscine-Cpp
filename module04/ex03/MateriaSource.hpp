@@ -9,6 +9,7 @@
 class MateriaSource : public IMateriaSource
 {
     protected:
+    AMateria *_materia[4];
     public:
     void learnMateria(AMateria *);
     AMateria* createMateria(std::string const & type);
