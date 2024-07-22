@@ -43,5 +43,8 @@ const std::string& AMateria::getType() const
 
 void AMateria::use(ICharacter& target)
 {
-
+    if(target.getName() == "Ice")
+        std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    else if(target.getName() == "Cure")
+        std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }
