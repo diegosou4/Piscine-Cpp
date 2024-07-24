@@ -1,12 +1,13 @@
-#include "MateriaSource.cpp"
+#include "MateriaSource.hpp"
 #include "AMateria.hpp"
 #include "IMateriaSource.hpp"
+#include <iostream>
 
 void MateriaSource::learnMateria(AMateria *m)
 {
     for(int index = 0; index < 4; index++)
     {
-        if (_materia[index]->getType().empty() == true)
+        if (_materia[index] == NULL)
         {
             _materia[index] = m;
             return;
@@ -16,20 +17,28 @@ void MateriaSource::learnMateria(AMateria *m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-    return new AMateria(type);
+
+    for(int i = 0;i < 4; i++)
+    {
+        if (_materia[i] != NULL &&_materia[i]->getType() == type)
+            return _materia[i]->clone();
+    }
+    return NULL;
 }
 
-MaterialSource::MaterialSource()
+
+MateriaSource::MateriaSource()
 {
-    
+    for(int i = 0; i < 4; i++)
+        _materia[i] = NULL; 
 }
 
-MaterialSource::MaterialSource(const MaterialSource &copy)
+MateriaSource::MateriaSource(const MateriaSource &copy)
 {
     *this = copy;
 }
 
-MaterialSource &MaterialSource::operator=(const MaterialSource &copy)
+MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 {
     for(int index = 0; index < 4; index++)
         _materia[index] = copy._materia[index];
@@ -37,7 +46,7 @@ MaterialSource &MaterialSource::operator=(const MaterialSource &copy)
     return *this;
 }
 
-MaterialSource::~MaterialSource()
+MateriaSource::~MateriaSource()
 {
     for(int index = 0; index < 4; index++)
     {

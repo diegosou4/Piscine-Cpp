@@ -4,21 +4,21 @@
 #include <iostream>
 
 
-Cure::Cure() : AMateria()
+Cure::Cure() : AMateria("Cure")
 {
     std::cout << "Cure Default constructor called" << std::endl;
 }
 
 Cure::~Cure() 
 {
-    std::cout << "Cure Default desctuctor called" << std::endl;
+    std::cout << "Cure Default destructor called" << std::endl;
 }
 
 Cure::Cure(std::string const & type) : AMateria(type)
 {    
 }
 
-Cure::Cure(const Cure &copy) 
+Cure::Cure(const Cure &copy) : AMateria(copy)
 {
     *this = copy;
 }
@@ -30,4 +30,14 @@ Cure &Cure::operator=(const Cure &copy)
         _type = copy._type;
     
     return(*this);
+}
+
+AMateria* Cure::clone() const
+{
+    return new Cure(*this);
+}
+
+void Cure::use(ICharacter& target)
+{
+        std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }

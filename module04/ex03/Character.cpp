@@ -46,7 +46,7 @@ void Character::equip(AMateria *m)
 {
     for(int index = 0; index < 4; index++)
     {
-        if (_materia[index]->getType().empty() == true)
+        if (_materia[index] == NULL)
         {
             _materia[index] = m;
             return;
@@ -65,6 +65,9 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    if (idx < 4)
+    if (idx < 4 && _materia[idx] != NULL)
+    {
         _materia[idx]->use(target);
+    }
+        
 }
