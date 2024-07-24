@@ -4,14 +4,14 @@
 #include <iostream>
 
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
-    std::cout << "Cure Default constructor called" << std::endl;
+    // std::cout << "Cure Default constructor called" << std::endl;
 }
 
 Cure::~Cure() 
 {
-    std::cout << "Cure Default destructor called" << std::endl;
+    // std::cout << "Cure Default destructor called" << std::endl;
 }
 
 Cure::Cure(std::string const & type) : AMateria(type)
@@ -25,7 +25,7 @@ Cure::Cure(const Cure &copy) : AMateria(copy)
 
 Cure &Cure::operator=(const Cure &copy)
 {
-    std::cout << "Cure assignment operator called" << std::endl;
+    // std::cout << "Cure assignment operator called" << std::endl;
     if(this != &copy)
         _type = copy._type;
     

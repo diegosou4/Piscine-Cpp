@@ -2,6 +2,7 @@
 
 #include <string>
 #include "AMateria.hpp"
+#include <iostream>
 
 Character::Character()
 {
@@ -65,6 +66,7 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
+   
     if (idx < 4 && _materia[idx] != NULL)
     {
         _materia[idx]->use(target);
