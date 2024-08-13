@@ -6,7 +6,7 @@
 /*   By: diegmore <diegmore@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 14:35:24 by diegmore          #+#    #+#             */
-/*   Updated: 2024/07/02 09:51:00 by diegmore         ###   ########.fr       */
+/*   Updated: 2024/08/13 12:09:53 by diegmore         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void printmenu()
 
 void dooption(std::string input,Phonebook *phone)
 {
-    if (input == "ADD" || input ==  "1")
+    if (input == "ADD")
         phone->addContact();
-    else if (input == "SEARCH" || input ==  "2") 
+    else if (input == "SEARCH") 
         phone->printFcontact();        
-    else if (input == "EXIT" || input == "3") 
+    else if (input == "EXIT") 
     std::cout << "Thanks for using Phone Book! Good bye ;)" << std::endl;
     else 
     std::cout << "Wrong option. Please choose a correct option:" << std::endl;

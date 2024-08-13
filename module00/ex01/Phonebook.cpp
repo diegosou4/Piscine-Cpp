@@ -39,7 +39,12 @@ void Phonebook::printFcontact()
     {
         std::cout << "Error" << std::endl;
         return;
-    }  
+    }
+    if(option.size() != 1)
+    {
+        std::cout << "Error" << std::endl;
+        return;
+    }
     int index = (int)option[0] - 48;
     if(index >= 0 && index <= 7)
     {
