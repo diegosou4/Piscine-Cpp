@@ -33,13 +33,22 @@ bool create_temp(std::string file, std::ofstream &temp)
 bool open_file(std::ifstream &myfile, std::string &file)
 {
     myfile.open(file.c_str());
+
     if(!myfile.is_open())
     {  
         std::cout << "Error when we tried to open: " << file << std::endl;
         return(false);
     }
+    if(myfile.peek() == std::ifstream::traits_type::eof())
+    {
+        std::cout << "Error: file is empty" << std::endl;
+        myfile.close();
+        return(false);
+    }
     return(true);
 }
+   
+
 
 int init_program(std::string file,std::string str1,std::string str2)
 {
