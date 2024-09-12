@@ -4,6 +4,7 @@
 
 DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap()
 {
+    this->_name = "Default";
     std::cout << "Diamond Trap Default Constructor called" << std::endl;
 }
 
