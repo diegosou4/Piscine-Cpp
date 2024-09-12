@@ -5,11 +5,16 @@
 ScavTrap::ScavTrap()
 {
     std::cout << "Default constructor ScavTrap called" << std::endl;    
+    _hitPoints = 0;
+    _energyPoints = 0;
+    _attackDamage = 0;
+    _name = "Default";
 }
 
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap Destructor called" << std::endl;
+
 }
 ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj)
 {
@@ -29,10 +34,9 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &obj)
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
     std::cout << "Parameterized ScavTrap constructor called" << std::endl;
-    _hitPoints = 100;
+      _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;
-   
 }
 
 void ScavTrap::guardGate()
@@ -40,20 +44,14 @@ void ScavTrap::guardGate()
     std::cout << "ScavTrap " << _name << " now in Guard Gate !" << std::endl;
 }
 
-static bool zeroType(int type, std::string name)
-{
-    if(type <= 0)
-    {
-        std::cout << "ScavTrap " << name << " has no energy" << std::endl;
-        return true;
-    }
-    return false;
-}
 
 void ScavTrap::attack(const std::string& target)
 {
-    if(zeroType(_energyPoints, _name))
+    if(_energyPoints <= 0)
+    {
+        std::cout << "ScavTrap " << _name << " has no energy" << std::endl;
         return;
+    } 
     std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
     _energyPoints--;
 }

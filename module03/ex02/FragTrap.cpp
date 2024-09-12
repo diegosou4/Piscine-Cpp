@@ -11,6 +11,10 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap()
 {
     std::cout << "Default constructor FragTrap called" << std::endl;   
+    _hitPoints = 0;
+    _energyPoints = 0;
+    _attackDamage = 0;
+    _name = "Default";
 }
 
 FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj)
