@@ -44,15 +44,16 @@ FragTrap &FragTrap::operator=(const FragTrap &obj)
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
      std::cout << "Parameterized FragTrap constructor called" << std::endl;
-    if(_isconfigured == 0)
-    {
-        _hp = 100;
-        _at = 30;
-        _isconfigured += 1;
-    }
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
+    if(_isconfigured == 0)
+    {
+        _hp = _hitPoints;
+        _at = _attackDamage;
+        _isconfigured += 1;
+    }
+  
 }
 void FragTrap::highFivesGuys(void)
 {
