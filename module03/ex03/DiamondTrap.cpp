@@ -16,9 +16,9 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name), _name(name) 
 {
     this->_name = name;
-  this->_hitPoints = 100;
+  this->_hitPoints = FragTrap::getHp();
   this->_energyPoints = 50;
-  this->_attackDamage = 30;
+  this->_attackDamage = FragTrap::getAt();
    std::cout << "DiamondTrap constructor called." << std::endl;
 }
 

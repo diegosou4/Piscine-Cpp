@@ -6,6 +6,9 @@
 class FragTrap: public virtual ClapTrap
 {
     private:
+    int _hp;
+    int _at;
+    static int _isconfigured;
     public:
         FragTrap();
         FragTrap(std::string name);
@@ -13,6 +16,8 @@ class FragTrap: public virtual ClapTrap
         FragTrap &operator=(const FragTrap &obj);
         ~FragTrap();
         void highFivesGuys(void);
+        int getHp(void);
+        int getAt(void);
 };
 
 #endif

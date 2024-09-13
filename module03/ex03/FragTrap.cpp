@@ -3,6 +3,8 @@
 #include <iostream>
 
 
+int FragTrap::_isconfigured = 0;
+
 FragTrap::~FragTrap()
 {
     std::cout << "Default Destructor FragTrap called" << std::endl;
@@ -11,6 +13,12 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap()
 {
     std::cout << "Default constructor FragTrap called" << std::endl;   
+    if(_isconfigured == 0)
+    {
+        _hp = 0;
+        _at = 0;
+        _isconfigured += 1;
+    }
     _hitPoints = 0;
     _energyPoints = 0;
     _attackDamage = 0;
@@ -36,6 +44,12 @@ FragTrap &FragTrap::operator=(const FragTrap &obj)
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
      std::cout << "Parameterized FragTrap constructor called" << std::endl;
+    if(_isconfigured == 0)
+    {
+        _hp = 100;
+        _at = 30;
+        _isconfigured += 1;
+    }
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
@@ -43,4 +57,14 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 void FragTrap::highFivesGuys(void)
 {
     std::cout << "FragTrap call High Fives Guys for help! " << std::endl;
+}
+
+int FragTrap::getHp(void)
+{
+    return _hp;
+}
+
+int FragTrap::getAt(void)
+{
+    return _at;
 }
