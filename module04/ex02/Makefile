@@ -7,8 +7,8 @@ NC = \033[0m
 
 
 NAME = Brain
-CC = c++
-CFLAGS = -std=c++98  -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -std=c++98  -Wall -Wextra -Werror -fsanitize=address
 
 SRC = main.cpp Brain.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp
 
@@ -18,10 +18,10 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(BBLUE)Creating Brain $(NC)"
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@echo "$(RED)Removing object files..$(NC)"

@@ -14,7 +14,7 @@ class Animal
     Animal &operator=(const Animal &copy);
     std::string getType() const;
     // Virutal fuction pure
-
+    // To abstact
     virtual void makeSound() const = 0;
 };
 

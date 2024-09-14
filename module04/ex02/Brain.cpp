@@ -48,6 +48,9 @@ void Brain::setIdea(std::string idea, int index)
 std::string Brain::getIdea(int index)
 {
     if(!(index >= 100 || index < 0))
-        return(ideas[index]);
-    return("Index Incorret please send a correct index");
+    {
+        if(!ideas[index].empty())
+            return(ideas[index]);
+    } 
+    return("Index Incorret or Empty please send a correct index");
 }

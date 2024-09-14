@@ -9,26 +9,30 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+    Animal* mu540 = new Animal();
+    Animal* Zezao = new Dog();
+    Animal* Aurora = new Cat();
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << mu540->getType() << " ";
+    mu540->makeSound();
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << Zezao->getType() << " ";
+    Zezao->makeSound();
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << Aurora->getType() << " ";
+    Aurora->makeSound();
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << "-----------------------------" << std::endl;
 
-
-    const Animal* wa = new WrongCat();
-
-    std::cout << wa->getType() << " " << std::endl;
-
-    wa->makeSound();
-
-    delete wa;
-    delete i;
-    delete j;
-    delete meta;
+    Animal* Rodolfo = new WrongCat();
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << Rodolfo->getType() << " " << std::endl;
+    Rodolfo->makeSound();
+    std::cout << "-----------------------------" << std::endl;
+    delete mu540;
+    delete Zezao;
+    delete Aurora;
+    delete Rodolfo;
     return 0;
     
 }

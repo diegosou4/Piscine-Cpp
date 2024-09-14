@@ -8,35 +8,32 @@
 #include <iostream>
 
 
-// Aqui podemos ver um grande problema quando nao usamos polimorfismo
-// O animal nao consegue exergar os outro atributos que  
-
-
-
 
 int main()
 {
-    // const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    // meta->makeSound();
+    // Animal* mu540 = new Animal();
+    Animal* Zezao = new Dog();
+    Animal* Aurora = new Cat();
+    std::cout << "-----------------------------" << std::endl;
+    // std::cout << mu540->getType() << " ";
+    // mu540->makeSound();
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << Zezao->getType() << " ";
+    Zezao->makeSound();
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << Aurora->getType() << " ";
+    Aurora->makeSound();
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << "-----------------------------" << std::endl;
 
-
-    Dog *cachorro = new Dog();
-    cachorro->setIdea("Morder o entregador as 12:00 auau",0);
-    std::cout << cachorro->getIdea(0) << std::endl;
-    Dog *outrocachorro = new Dog(*cachorro);
-    outrocachorro->setIdea("Dormir ate as 4 da tarde auau",1);
-
-    std::cout << outrocachorro->getIdea(1) << std::endl;
-    std::cout << outrocachorro->getIdea(0) << std::endl;
-    std::cout << cachorro->getIdea(1) << std::endl;
-    
-    delete outrocachorro;
-    delete cachorro;
-    // delete meta;
-    delete j;
-    delete i;
+    // Animal* Rodolfo = new WrongCat();
+    std::cout << "-----------------------------" << std::endl;
+    // std::cout << Rodolfo->getType() << " " << std::endl;
+    // Rodolfo->makeSound();
+    std::cout << "-----------------------------" << std::endl;
+    // delete mu540;
+    delete Zezao;
+    delete Aurora;
+    // delete Rodolfo;
     return 0;
-    
 }

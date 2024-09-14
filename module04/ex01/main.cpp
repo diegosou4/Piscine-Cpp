@@ -16,25 +16,28 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-
-    Dog *cachorro = new Dog();
-    cachorro->setIdea("Morder o entregador as 12:00 auau",0);
-    std::cout << cachorro->getIdea(0) << std::endl;
-    Dog *outrocachorro = new Dog(*cachorro);
-    outrocachorro->setIdea("Dormir ate as 4 da tarde auau",1);
-
-    std::cout << outrocachorro->getIdea(1) << std::endl;
-    std::cout << outrocachorro->getIdea(0) << std::endl;
-    std::cout << cachorro->getIdea(1) << std::endl;
+    Animal* Mu540 = new Animal();
     
-    delete outrocachorro;
-    delete cachorro;
-    delete meta;
-    delete j;
-    delete i;
+    Dog* Carlao = new Dog();
+    std::cout << "-----------------------------" << std::endl;
+    Carlao->setIdea("Au au au morder carteiro",0);
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << Carlao->getIdea(0) << std::endl;
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << Carlao->getIdea(1) << std::endl;
+
+
+    std::cout << "-----------------------------" << std::endl;
+    Dog* Carlao2 = new Dog(*Carlao);
+    std::cout << "Atualizando valor da ideia do Carlao" << std::endl;
+    Carlao->setIdea("Au au au au Mimir", 0);
+    std::cout << "-----------------------------" << std::endl;
+    std::cout << Carlao2->getIdea(0) << std::endl;
+    std::cout << "-----------------------------" << std::endl;
+
+    delete Carlao2;
+    delete Carlao;
+    delete Mu540;
     return 0;
     
 }
