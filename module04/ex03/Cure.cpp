@@ -26,9 +26,7 @@ Cure::Cure(const Cure &copy) : AMateria(copy)
 Cure &Cure::operator=(const Cure &copy)
 {
     // std::cout << "Cure assignment operator called" << std::endl;
-    if(this != &copy)
-        _type = copy._type;
-    
+    (void)copy;
     return(*this);
 }
 

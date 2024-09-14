@@ -19,9 +19,7 @@ Ice::Ice(const Ice &copy) : AMateria(copy)
 
 Ice &Ice::operator=(const Ice &copy)
 {
-    if (this == &copy)
-        return (*this);
-    AMateria::operator=(copy);
+    (void) copy;
     return (*this);
 }
 
