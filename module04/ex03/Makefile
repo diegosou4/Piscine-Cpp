@@ -10,7 +10,7 @@ NAME = materia
 CC = c++ -g
 CFLAGS = -std=c++98  -Wall -Wextra -Werror
 
-SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp MateriaSource.cpp
+SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp MateriaSource.cpp Ice.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

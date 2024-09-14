@@ -6,6 +6,7 @@
 
 Character::Character()
 {
+    _name = "default";
     for(int index = 0; index < 4; index++)
         _materia[index] = NULL;
 }

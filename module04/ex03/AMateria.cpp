@@ -6,6 +6,7 @@
 
 AMateria::AMateria()
 {
+    _type = "default";
     // std::cout << "AMateria Default constructor called" << std::endl;
 }
 
