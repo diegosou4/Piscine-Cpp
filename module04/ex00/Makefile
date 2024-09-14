@@ -10,7 +10,7 @@ NAME = Animal
 CXX = c++
 CXXFLAGS = -std=c++98  -Wall -Wextra -Werror
 
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp
+SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

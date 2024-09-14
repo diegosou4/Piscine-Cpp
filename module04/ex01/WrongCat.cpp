@@ -26,7 +26,6 @@ WrongCat &WrongCat::operator=(const WrongCat &copy)
    std::cout << "Dog assignment operator called" << std::endl;
     if(this != &copy)
     {
-        //Animal::operator=(copy);
         _brain = new Brain(*copy._brain);
         type = copy.type;
     }   

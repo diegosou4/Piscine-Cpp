@@ -5,7 +5,7 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 #include <iostream>
-
+#include "WrongAnimal.hpp"
 
 int main()
 {
@@ -24,7 +24,7 @@ int main()
     std::cout << "-----------------------------" << std::endl;
     std::cout << "-----------------------------" << std::endl;
 
-    Animal* Rodolfo = new WrongCat();
+    WrongAnimal* Rodolfo = new WrongCat();
     std::cout << "-----------------------------" << std::endl;
     std::cout << Rodolfo->getType() << " " << std::endl;
     Rodolfo->makeSound();

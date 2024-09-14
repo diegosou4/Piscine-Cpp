@@ -7,8 +7,8 @@ NC = \033[0m
 
 
 NAME = materia
-CC = c++ -g
-CFLAGS = -std=c++98  -Wall -Wextra -Werror
+CXX = c++ -g
+CXXFLAGS = -std=c++98  -Wall -Wextra -Werror 
 
 SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp MateriaSource.cpp Ice.cpp
 
@@ -18,10 +18,10 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "$(BBLUE)Creating Materia $(NC)"
-	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@echo "$(RED)Removing object files..$(NC)"

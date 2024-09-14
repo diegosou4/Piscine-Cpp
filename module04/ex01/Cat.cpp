@@ -26,7 +26,6 @@ Cat &Cat::operator=(const Cat &copy)
     std::cout << "Cat assignment operator called" << std::endl;
     if(this != &copy)
     {
-        Animal::operator=(copy);
         _brain = new Brain(*copy._brain);
         type = copy.type;
     }
