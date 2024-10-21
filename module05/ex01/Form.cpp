@@ -21,7 +21,7 @@ Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name),
 Form::Form(Form const &other) : _name(other._name), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
 {
      std::cout << "Form copy constructor called" << std::endl;
-    _signed = other._signed;
+    *this = other;
 }
 
 Form &Form::operator=(Form const &other)
