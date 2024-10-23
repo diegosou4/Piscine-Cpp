@@ -12,7 +12,7 @@ AForm::~AForm()
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
-    if(gradeToSign < 1 || gradeToExecute < 1)x
+    if(gradeToSign < 1 || gradeToExecute < 1)
         throw AForm::GradeTooHighException();
     if(gradeToSign > 150 || gradeToExecute > 150)
         throw AForm::GradeTooLowException();
