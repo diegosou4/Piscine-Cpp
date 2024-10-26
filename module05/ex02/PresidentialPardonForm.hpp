@@ -3,6 +3,8 @@
 
 
 #include "AForm.hpp"
+#include <iostream>
+#include <ostream>
 
 
 class PresidentialPardonForm : public AForm
@@ -15,8 +17,7 @@ class PresidentialPardonForm : public AForm
     PresidentialPardonForm(std::string target);
     PresidentialPardonForm(PresidentialPardonForm const &other);
     PresidentialPardonForm &operator=(PresidentialPardonForm const &other);
-
-}
-
+    void beExecute() const;
+};
 
 #endif
