@@ -26,12 +26,20 @@ Bureaucrat::~Bureaucrat()
 
 void Bureaucrat::increment()
 {
-    _grade--;
+    int temp = _grade - 1;
+    if(temp < 1)
+        throw GradeTooHighException();
+    else
+        _grade--;
 }
 
 void Bureaucrat::decrement()
 {
-    _grade++;
+    int temp = _grade + 1;
+    if(temp > 150)
+        throw GradeTooLowException();
+    else
+        _grade++;
 }
 
 const std::string& Bureaucrat::getName() const
