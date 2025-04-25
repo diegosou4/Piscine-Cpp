@@ -2,15 +2,15 @@
 #include <iostream>
 #include <ostream>
 
-Form::Form() : _name("default"), _gradeToSign(150), _gradeToExecute(150)
+Form::Form() : _name("default"), _gradeToSign(150), _gradeToExecute(150), _signed(false)
 {
-    _signed = false;
+    
 }
 Form::~Form()
 {
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute),  _signed(false)
 {
     if(gradeToSign < 1 || gradeToExecute < 1)
         throw Form::GradeTooHighException();
