@@ -2,32 +2,31 @@
 #include <iostream>
 #include <ostream>
 
-AForm::AForm() : _name("default"), _gradeToSign(150), _gradeToExecute(150)
+AForm::AForm() : _name("default"), _gradeToSign(150), _gradeToExecute(150),  _signed(false)
 {
-    _signed = false;
+
 }
 AForm::~AForm()
 {
 }
 
-AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) 
+AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) ,  _signed(false)
 {
-    _signed = false;
     if(gradeToSign < 1 || gradeToExecute < 1)
         throw AForm::GradeTooHighException();
     if(gradeToSign > 150 || gradeToExecute > 150)
         throw AForm::GradeTooLowException();
 }
 
-AForm::AForm(AForm const &other) : _name(other._name), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute)
+AForm::AForm(AForm const &other) : _name(other._name), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute),  _signed(false)
 {
-    //  std::cout << "Form copy constructor called" << std::endl;
+     std::cout << "Form copy constructor called" << std::endl;
     *this = other;
 }
 
 AForm &AForm::operator=(AForm const &other)
 {
-    // std::cout << "Form assignment operator called" << std::endl;
+    std::cout << "Form assignment operator called" << std::endl;
     if (this != &other)
         _signed = other._signed;
     return (*this);
@@ -79,7 +78,6 @@ void AForm::execute(Bureaucrat const & executor) const
         throw AForm::GradeTooLowException();
     else
         this->beExecute();
-
 }
 
 std::ostream &operator<<(std::ostream &os, const AForm &obj)
