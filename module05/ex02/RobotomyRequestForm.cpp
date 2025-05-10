@@ -43,5 +43,5 @@ void RobotomyRequestForm::beExecute() const
     if(rand() % 2 == 0)
         std::cout << _target << " has been robotomized successfully" << std::endl;
     else
-        std::cout << _target << " has been failed to robotomized" << std::endl;
+        std::cerr  << _target << " has been failed to robotomized" << std::endl;
 }

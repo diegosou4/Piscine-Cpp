@@ -39,7 +39,7 @@ void ShrubberyCreationForm::beExecute() const
     file.open((this->getName() + "_shrubbery").c_str());
     if(!file.is_open())
     {
-        std::cout << "Error opening file" << std::endl;
+        std::cerr  << "Error opening file" << std::endl;
         return;
     }
     file << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⡾⠋⠷⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << std::endl;

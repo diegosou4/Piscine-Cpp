@@ -8,10 +8,6 @@
 
 int main()
 {
-   
-
-  
-
     // ==================== PresidentialPardonForm ====================
     std::cout << "-------------------------" << std::endl;
         PresidentialPardonForm form1 = PresidentialPardonForm("Form1");
