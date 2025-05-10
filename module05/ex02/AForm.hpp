@@ -16,7 +16,7 @@ class AForm{
         bool _signed;
     public:
         AForm();
-        ~AForm();
+        virtual ~AForm() {} ;
         AForm(std::string name, int gradeToSign, int gradeToExecute);
         AForm(AForm const &other);
         AForm &operator=(AForm const &other);
