@@ -15,6 +15,12 @@ class ShrubberyCreationForm : public AForm
         ShrubberyCreationForm(ShrubberyCreationForm const &other);
         ShrubberyCreationForm &operator=(ShrubberyCreationForm const &other);
         void beExecute() const;
+
+        class ShrubberyException : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
 };
 
 

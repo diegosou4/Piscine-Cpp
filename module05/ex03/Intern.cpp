@@ -1,5 +1,7 @@
 #include "Intern.hpp"
-
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <iostream>
 
 Intern::Intern()
@@ -12,28 +14,43 @@ Intern::~Intern()
     std::cout << "Default Destructor Called" << std::endl;
 }
 
-Intern::&AForm makeForm(std::string object, std::string target)
+Intern &Intern::operator=(Intern const &other)
 {
-    Aform myform;
+    std::cout << "Assignment operator called" << std::endl;
+    return (*this);
+}
 
-    std::string myojbects[3] = {"robotmy request", "shrubbery resquest", "presidential request"};
+AForm*Intern::makeForm(std::string object, std::string target)
+{
+
+    std::string myojbects[3] = {"robotomy request", "shrubbery resquest", "presidential request"};
     int i = 0;
 
+    try{
+        while(myojbects[i] != object && i < 3)
+            i++;
+        switch(i)
+        {
+            case 0: 
+                std::cout << "Intern creates " << object << std::endl;
+                return new RobotomyRequestForm(target);
+            break;
+            case 1:
+                std::cout << "Intern creates " << object << std::endl;
+                return new ShrubberyCreationForm(target);
+            break;
+            case 2:
+                std::cout << "Intern creates " << object << std::endl;
+                return new PresidentialPardonForm(target);
+            default: 
+                throw InvalidForm();
 
-    while(myojbects[i] != object)
-        i++;
-    switch(i)
+        }
+    }catch ( std::exception &e)
     {
-        case 0: 
-            myform = RobotomyRequestForm(target);
-        break;
-        case 1:
-            myform = ShrubberyCreationForm(target);
-        break;
-        case 2:
-            myform = PresidentialPardonForm(target);
-        default: 
-            myform = NULL;
+        std::cout << e.what() << std::endl;
+        return NULL;
     }
-    return(myform);
+
+    return(NULL);
 }

@@ -13,8 +13,17 @@ class Intern
     public:
     ~Intern();
     Intern();
+    Intern &operator=(Intern const &other);
 
-    &AForm makeForm();
+    AForm* makeForm(std::string object, std::string target);
+    class InvalidForm : public std::exception
+    {
+        public:
+            virtual const char* what() const throw()
+            {
+                return "Intern can`t create this form";
+            }
+    };
 
 };
 

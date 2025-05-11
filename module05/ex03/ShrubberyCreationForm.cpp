@@ -32,6 +32,12 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
     return (*this);
 }
 
+const char *ShrubberyCreationForm::ShrubberyException::what() const throw()
+{
+    return ("Error opening file");
+}
+
+
 void ShrubberyCreationForm::beExecute() const
 {
     
@@ -39,8 +45,7 @@ void ShrubberyCreationForm::beExecute() const
     file.open((this->getName() + "_shrubbery").c_str());
     if(!file.is_open())
     {
-        std::cout << "Error opening file" << std::endl;
-        return;
+        throw ShrubberyException();
     }
     file << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⡾⠋⠷⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << std::endl;
     file << "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⡆⣠⡰⡞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀" << std::endl;

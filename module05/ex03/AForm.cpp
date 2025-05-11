@@ -6,9 +6,7 @@ AForm::AForm() : _name("default"), _gradeToSign(150), _gradeToExecute(150)
 {
     _signed = false;
 }
-AForm::~AForm()
-{
-}
+
 
 AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) 
 {
